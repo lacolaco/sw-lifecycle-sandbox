@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "/helloWorld",
+        "function": "helloWorld"
+      },
+      {
+        "source": "/sw.js",
+        "function": "sw"
+      },
+      {
+        "source": "/updateSw",
+        "function": "updateSw"
+      }
+    ]
+  }
+}

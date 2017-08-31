@@ -9,3 +9,11 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+navigator.serviceWorker.register('/sw.js')
+  .then(registration => {
+    console.log(registration);
+  })
+  .catch(error => {
+    console.error(error);
+  });
