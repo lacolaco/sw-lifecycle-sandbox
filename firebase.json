@@ -3,16 +3,16 @@
     "public": "dist",
     "rewrites": [
       {
-        "source": "/helloWorld",
-        "function": "helloWorld"
-      },
-      {
         "source": "/sw.js",
         "function": "sw"
       },
       {
-        "source": "/updateSw",
-        "function": "updateSw"
+        "source": "/generateWorker",
+        "function": "generateWorker"
+      },
+      {
+        "source": "/test",
+        "function": "test"
       }
     ]
   }

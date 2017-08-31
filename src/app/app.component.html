@@ -1,1 +1,35 @@
-<button md-raised-button color="primary" (click)="updateSw()">Update Worker Revision</button>
+<md-progress-bar *ngIf="inProcessing" mode="indeterminate"></md-progress-bar>
+
+<h1>Service Worker Lifecycle Sandbox</h1>
+
+<md-card>
+    <div>
+        <p>Registered: {{registration ? 'YES' : 'NO' }}</p>
+        <p>Controlled: {{controller ? 'YES' : 'NO'}}</p>
+    </div>
+</md-card>
+
+<md-card>
+    <div>
+        <md-checkbox [(ngModel)]="generateParams.claimOnActivate">claim on activate</md-checkbox>
+        <md-checkbox [(ngModel)]="generateParams.skipWaiting">skipWaiting</md-checkbox>
+    </div>
+    <button md-raised-button color="primary" (click)="generateWorker()">Generate New sw.js</button>
+    <div>{{ generatedResult | json }}</div>
+</md-card>
+
+<md-card>
+    <div>
+        <button md-raised-button color="primary" (click)="register()">Register</button>
+        <button md-raised-button color="primary" (click)="unregister()">Unregister</button>
+    </div>
+
+    <div>
+        <button md-raised-button color="primary" (click)="update()">Update</button>
+    </div>
+</md-card>
+
+<md-card>
+    <button md-raised-button color="primary" (click)="fetchTest()">Run Fetch Test</button>
+    <span>{{ fetchTestResult }}</span>
+</md-card>
